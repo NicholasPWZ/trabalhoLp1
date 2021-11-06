@@ -21,26 +21,32 @@ public class Endereco {
     }
     public void validar(){
         List<String>mensagemErro = new ArrayList<>();
-        if(rua == null || rua.isBlank()){
-            mensagemErro.add("Informe a rua");
+        if(rua == null || rua.length() >=100 ){
+            mensagemErro.add("Informe uma rua válida");
         }
-        if(bairro == null || bairro.isBlank()){
-            mensagemErro.add("Informe o bairro");
+        if(num.length() > 6){
+            mensagemErro.add("Informe um numero válido");
         }
-        if(cep == null || cep.isBlank()){
-            mensagemErro.add("Informe o CEP");
+        if(bairro == null || bairro.length() >= 50){
+            mensagemErro.add("Informe um bairro válido");
         }
-        if(cidade == null || cidade.isBlank()){
-            mensagemErro.add("Informe a cidade");
+        if(complemento.length()>= 120){
+            mensagemErro.add("Informe um complemento válido");
+        }
+        if(cep == null || cep.length() > 10){
+            mensagemErro.add("Informe um CEP válido");
+        }
+        if(cidade == null || cidade.length()>50){
+            mensagemErro.add("Informe uma cidade válida");
         }
         if(estado == null || estado.isBlank()){
-            mensagemErro.add("Informe o estado");
+            mensagemErro.add("Informe um estado válido");
         }
         if(cep.length() != 8){
-            mensagemErro.add("Informe um CEP valido sem caracteres");
+            mensagemErro.add("Informe um CEP válido");
         }
         if(estado.length() != 2){
-            mensagemErro.add("Informe a sigla valida do Estado");
+            mensagemErro.add("Informe um estado válido");
         }
         if(!mensagemErro.isEmpty()){
             throw new IllegalArgumentException(mensagemErro.toString());

@@ -12,11 +12,11 @@ public class Fornecedor extends Pessoa {
     }
     public void  validar(){
         List<String> mensagemErro = new ArrayList<>();
-        if(cnpj == null || cnpj.isBlank()){
-            mensagemErro.add("Informe o CNPJ");
+        if(cnpj == null || cnpj.length()>20){
+            mensagemErro.add("Informe um CNPJ valido");
         }
-        if(nomeFantasia == null || nomeFantasia.isBlank()){
-            mensagemErro.add("Informe o nome fantasia");
+        if(nomeFantasia == null || nomeFantasia.length()>=100){
+            mensagemErro.add("Informe um nome fantasia valido");
         }
         if(cnpj.length() != 14){
             mensagemErro.add("Informe um CNPJ valido");

@@ -9,20 +9,22 @@ public class Cliente extends Pessoa {
         super(contato, endereco);
         this.nome = nome;
         this.cpf = cpf;
+        validar();
     }
     public void validar(){
         List<String> mensagemErro = new ArrayList<String>();
+
         if(nome == null || nome.isBlank()) {
-            mensagemErro.add("Insira o nome");
+            mensagemErro.add("Informe um nome válido");
         }
-        if(nome.length() <= 5){
-            mensagemErro.add("Insira um nome válido");
+        if(nome.length() >=100 ){
+            mensagemErro.add("Informe um nome válido");
         }
         if(cpf == null || cpf.isBlank()){
-            mensagemErro.add("Insira o CPF");
+            mensagemErro.add("Informe um CPF valido");
         }
         if(cpf.length() != 11){
-            mensagemErro.add("Insira um CPF valido")  ;
+            mensagemErro.add("Informe um CPF valido")  ;
         }
         if(!mensagemErro.isEmpty()){
                     throw new IllegalArgumentException(mensagemErro.toString());
