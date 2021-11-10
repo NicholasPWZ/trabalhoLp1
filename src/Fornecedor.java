@@ -9,6 +9,7 @@ public class Fornecedor extends Pessoa {
         super(contato, endereco);
         this.cnpj = cnpj;
         this.nomeFantasia = nomeFantasia;
+        validar();
     }
     public void  validar(){
         List<String> mensagemErro = new ArrayList<>();

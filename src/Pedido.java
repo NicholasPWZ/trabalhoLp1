@@ -1,10 +1,10 @@
-import javax.xml.crypto.Data;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
+    private StatusPedido status;
+    private String Id;
     private LocalDateTime dataCompra;
     private Fornecedor fornecedor;
     private Cliente cliente;
@@ -13,8 +13,10 @@ public class Pedido {
     private Double valorFrete;
     private List<Item>itens;
 
-    public Pedido(LocalDateTime dataCompra, Fornecedor fornecedor, Cliente cliente, Double valorTotal, Double valorTotalItens,
-                  Double valorFrete) {
+    public Pedido( String id, Fornecedor fornecedor, Cliente cliente, Double valorTotal, Double valorTotalItens,
+                  Double valorFrete, StatusPedido status) {
+        this.status = status;
+        this.Id = id;
         this.dataCompra = LocalDateTime.now();
         this.fornecedor = fornecedor;
         this.cliente = cliente;
@@ -79,5 +81,9 @@ public class Pedido {
 
     public List<Item> getItens() {
         return itens;
+    }
+
+    public String getId() {
+        return Id;
     }
 }

@@ -11,6 +11,7 @@ public class Item {
         this.produto = produto;
         this.qtd = qtd;
         this.valorTotalItem = valorTotalItem;
+        validar();
     }
     public void  validar(){
         List<String>mensagemErro = new ArrayList<>();

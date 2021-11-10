@@ -18,6 +18,7 @@ public class Endereco {
         this.cep = cep;
         this.cidade = cidade;
         this.estado = estado;
+        validar();
     }
     public void validar(){
         List<String>mensagemErro = new ArrayList<>();

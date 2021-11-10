@@ -10,6 +10,7 @@ public class Produto {
         this.nome = nome;
         this.descricao = descricao;
         this.valorUnitario = valorUnitario;
+        validar();
     }
     public void validar(){
         List<String>mensagemErro = new ArrayList<>();
