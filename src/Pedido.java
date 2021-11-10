@@ -86,4 +86,9 @@ public class Pedido {
     public String getId() {
         return Id;
     }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
 }
+
