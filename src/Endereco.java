@@ -20,12 +20,48 @@ public class Endereco {
         this.estado = estado;
         validar();
     }
+    public Endereco(String rua, String bairro,  String cep, String cidade, String estado) {
+        this.rua = rua;
+        this.bairro = bairro;
+        this.cep = cep;
+        this.cidade = cidade;
+        this.estado = estado;
+        validar1();
+    }
+    public void validar1(){
+        List<String>mensagemErro = new ArrayList<>();
+        if(rua == null || rua.length() >=100 ){
+            mensagemErro.add("Informe uma rua válida");
+        }
+        if(bairro == null || bairro.length() >= 50){
+            mensagemErro.add("Informe um bairro válido");
+        }
+        if(cep == null || cep.length() > 10){
+            mensagemErro.add("Informe um CEP válido");
+        }
+        if(cidade == null || cidade.length()>50){
+            mensagemErro.add("Informe uma cidade válida");
+        }
+        if(estado == null || estado.isBlank()){
+            mensagemErro.add("Informe um estado válido");
+        }
+        if(cep.length() != 8){
+            mensagemErro.add("Informe um CEP válido");
+        }
+        if(estado.length() != 2){
+            mensagemErro.add("Informe um estado válido");
+        }
+        if(!mensagemErro.isEmpty()){
+            throw new IllegalArgumentException(mensagemErro.toString());
+        }
+    }
+
     public void validar(){
         List<String>mensagemErro = new ArrayList<>();
         if(rua == null || rua.length() >=100 ){
             mensagemErro.add("Informe uma rua válida");
         }
-        if(num.length() > 6){
+        if(num.length() > 6 ){
             mensagemErro.add("Informe um numero válido");
         }
         if(bairro == null || bairro.length() >= 50){

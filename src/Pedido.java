@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Pedido {
     private StatusPedido status;
-    private String Id;
+
     private LocalDateTime dataCompra;
     private Fornecedor fornecedor;
     private Cliente cliente;
@@ -13,17 +13,14 @@ public class Pedido {
     private Double valorFrete;
     private List<Item>itens;
 
-    public Pedido( String id, Fornecedor fornecedor, Cliente cliente, Double valorTotal, Double valorTotalItens,
-                  Double valorFrete, StatusPedido status) {
+    public Pedido(  Fornecedor fornecedor, Cliente cliente, Double valorFrete, StatusPedido status) {
         this.status = status;
-        this.Id = id;
+
         this.dataCompra = LocalDateTime.now();
         this.fornecedor = fornecedor;
         this.cliente = cliente;
-        this.valorTotal = valorTotal;
         this.valorFrete = valorFrete;
         this.itens =  new ArrayList<Item>();
-        this.valorTotalItens = valorTotalItens;
     }
     public void validar(){
         List<String>mensagemErro = new ArrayList<>();
@@ -68,11 +65,15 @@ public class Pedido {
     }
 
     public Double getValorTotal() {
-        return valorTotal;
+        return getValorTotalItens() + getValorFrete();
     }
 
     public Double getValorTotalItens() {
-        return valorTotalItens;
+       double valor = 0;
+               for(Item itensListados : itens){
+                   valor += itensListados.getValorTotalItem();
+               }
+        return valor;
     }
 
     public Double getValorFrete() {
@@ -83,9 +84,7 @@ public class Pedido {
         return itens;
     }
 
-    public String getId() {
-        return Id;
-    }
+
 
     public StatusPedido getStatus() {
         return status;

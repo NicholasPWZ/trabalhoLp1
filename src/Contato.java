@@ -22,7 +22,7 @@ public class Contato {
         if(!email.contains("@")){
             mensagemErro.add("Informe um email válido");
         }
-        if(telefone.length() < 8 || telefone.length() > 9){
+        if(telefone.length() < 8 || telefone.length() > 11){
             mensagemErro.add("Informe um numero de telefone válido");
         }
         if(!mensagemErro.isEmpty()){

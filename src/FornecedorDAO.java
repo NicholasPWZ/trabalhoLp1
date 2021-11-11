@@ -1,8 +1,9 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class FornecedorDAO implements GenericDAO<Fornecedor, String>{
 
-   public List<Fornecedor>fornecedores;
+   public List<Fornecedor>fornecedores = new ArrayList<>();
 
     @Override
     public void adicionar(Fornecedor model) {

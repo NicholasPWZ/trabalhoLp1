@@ -4,7 +4,7 @@ import org.junit.Test;
 public class ClienteTest {
     @Test
     public void deveCriarCliente(){
-        Endereco enderecoJoao = new Endereco("Rua 2",null,"centro","bloco 4","90250010","Porto Alegre","RS");
+        Endereco enderecoJoao = new Endereco("Rua 2","centro","90250010","Porto Alegre","RS");
         Contato contatoJoao = new Contato("joao123@gmail.com","51999877877");
         Cliente joao = new Cliente(contatoJoao,enderecoJoao,"Joao Derly","09087862033");
         Assert.assertEquals(joao.getContato(),contatoJoao);

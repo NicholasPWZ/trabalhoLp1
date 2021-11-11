@@ -6,7 +6,7 @@ public class Produto {
     private String descricao;
     private Double valorUnitario;
 
-    public Produto(String nome, String descricao, Double valorUnitario) {
+    public Produto( String nome, String descricao, Double valorUnitario) {
         this.nome = nome;
         this.descricao = descricao;
         this.valorUnitario = valorUnitario;

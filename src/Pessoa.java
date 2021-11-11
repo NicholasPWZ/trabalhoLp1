@@ -8,7 +8,7 @@ public abstract class Pessoa {
     public Pessoa(Contato contato, Endereco endereco) {
         this.contato = contato;
         this.endereco = endereco;
-        validar();
+
 
     }
     public void validar(){

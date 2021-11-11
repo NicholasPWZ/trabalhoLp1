@@ -6,11 +6,11 @@ public class Item {
     private int qtd;
     private Double valorTotalItem;
 
-    public Item(Produto produto, int qtd, Double valorTotalItem) {
+    public Item(Produto produto, int qtd) {
 
         this.produto = produto;
         this.qtd = qtd;
-        this.valorTotalItem = valorTotalItem;
+
         validar();
     }
     public void  validar(){
@@ -21,9 +21,7 @@ public class Item {
         if(qtd <= 0){
            mensagemErro.add("Informe um quantidade válida");
         }
-        if (valorTotalItem <= 0){
-            mensagemErro.add("Informe um valor válido");
-        }
+
         if(!mensagemErro.isEmpty()){
         throw new IllegalArgumentException(mensagemErro.toString());
     }}
@@ -37,6 +35,7 @@ public class Item {
     }
 
     public Double getValorTotalItem() {
+        valorTotalItem = produto.getValorUnitario() * getQtd();
         return valorTotalItem;
     }
 }
