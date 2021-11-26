@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fornecedor extends Pessoa {
+    private long id_fornecedor;
     private String cnpj;
     private String nomeFantasia;
 
@@ -9,6 +10,14 @@ public class Fornecedor extends Pessoa {
         super(contato, endereco);
         this.cnpj = cnpj;
         this.nomeFantasia = nomeFantasia;
+        this.id_fornecedor = 0;
+        validar();
+    }
+    public Fornecedor(long id_fornecedor,Contato contato, Endereco endereco, String cnpj, String nomeFantasia) {
+        super(contato, endereco);
+        this.cnpj = cnpj;
+        this.nomeFantasia = nomeFantasia;
+        this.id_fornecedor = id_fornecedor;
         validar();
     }
     public void  validar(){
@@ -25,6 +34,10 @@ public class Fornecedor extends Pessoa {
     }
     public String getCnpj() {
         return cnpj;
+    }
+
+    public long getId_fornecedor() {
+        return id_fornecedor;
     }
 
     public String getNomeFantasia() {

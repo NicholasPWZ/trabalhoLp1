@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente extends Pessoa {
+    private long id_cliente;
     private String nome;
     private String cpf;
 
@@ -9,6 +10,14 @@ public class Cliente extends Pessoa {
         super(contato, endereco);
         this.nome = nome;
         this.cpf = cpf;
+        this.id_cliente = 0;
+        validar();
+    }
+    public Cliente(long id_cliente,Contato contato, Endereco endereco, String nome, String cpf) {
+        super(contato, endereco);
+        this.nome = nome;
+        this.cpf = cpf;
+        this.id_cliente = id_cliente;
         validar();
     }
     public void validar(){
@@ -31,6 +40,10 @@ public class Cliente extends Pessoa {
     }           }
     public String getNome() {
         return nome;
+    }
+
+    public long getId_cliente() {
+        return id_cliente;
     }
 
     public String getCpf() {

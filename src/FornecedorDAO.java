@@ -40,7 +40,14 @@ public class FornecedorDAO implements GenericDAO<Fornecedor, String>{
             e.printStackTrace();
         }
     }
-
+    public void deletarTodos() {
+        try {
+            PreparedStatement preparedStatement = conexao.prepareStatement("Delete FROM fornecedor");
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public Fornecedor buscarPorId(String model) {
         return null;

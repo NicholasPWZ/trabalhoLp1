@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-    private StatusPedido status;
+
 
     private LocalDateTime dataCompra;
     private Fornecedor fornecedor;
@@ -13,8 +13,8 @@ public class Pedido {
     private Double valorFrete;
     private List<Item>itens;
 
-    public Pedido(  Fornecedor fornecedor, Cliente cliente, Double valorFrete, StatusPedido status) {
-        this.status = status;
+    public Pedido( Fornecedor fornecedor, Cliente cliente, Double valorFrete) {
+
 
         this.dataCompra = LocalDateTime.now();
         this.fornecedor = fornecedor;
@@ -84,10 +84,5 @@ public class Pedido {
         return itens;
     }
 
-
-
-    public StatusPedido getStatus() {
-        return status;
-    }
 }
 

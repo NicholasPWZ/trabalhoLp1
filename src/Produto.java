@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Produto {
+    private long id_produto;
     private String nome;
     private String descricao;
     private Double valorUnitario;
@@ -25,6 +26,10 @@ public class Produto {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public long getId_produto() {
+        return id_produto;
     }
 
     public Double getValorUnitario() {

@@ -19,7 +19,7 @@ public class PedidoTest {
         Item item1 = new Item(produto1,5);
         Item item2 = new Item(produto2,4);
         Item item3 = new Item(produto3, 3);
-        Pedido pedido1 = new Pedido(fornecedor1,joao,35.50,StatusPedido.EM_TRANSITO);
+        Pedido pedido1 = new Pedido(fornecedor1,joao,35.50);
         pedido1.adicionarItem(item1);
         pedido1.adicionarItem(item2);
         pedido1.adicionarItem(item3);

@@ -20,16 +20,25 @@ import java.sql.SQLException;
         @Override
         public void adicionar(Produto model) {
             try{
-                String sql ="INSERT INTO produto(nome,descricao,valorUnitario)";
+                String sql ="INSERT INTO produto(nome,descricao,valorUnitario) VALUES(?,?,?)";
                 PreparedStatement preparedStatement = conexao.prepareStatement(sql);
                 preparedStatement.setString(1,model.getNome());
                 preparedStatement.setString(2,model.getDescricao());
                 preparedStatement.setDouble(3,model.getValorUnitario());
+                preparedStatement.execute();
             }catch (SQLException e){
                 e.printStackTrace();
             }
         }
+        public void deletarTodos(){
+            try{
+                PreparedStatement preparedStatement = conexao.prepareStatement("Delete FROM produto");
+                preparedStatement.execute();
+            }
 
+            catch(SQLException e){
+                e.printStackTrace();
+            }}
         @Override
         public Produto buscarPorId(String model) {
             return null;
